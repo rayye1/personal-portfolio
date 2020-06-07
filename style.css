@@ -1,21 +1,235 @@
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (max-width: 75em) {
+    html {
+      font-size: 60%;
+    }
+  }
+
+  body {
+    margin: 0;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    display: grid;
+    grid-template-areas:
+      "navlist"
+      "about"
+      "projects"
+      "contact";
+    grid-row-gap: -20px;
+    font-family: Montserrat, sans-serif;
+  }
+
   .nav {
     overflow: hidden;
-    background-color: #333;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,152,45,1) 100%);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    grid-area:navlist;
+    z-index: 1000;
   }
-  .nav a {
-  float: left;
-  display: block;
-  color: red;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  background-color:black;
-}
 
-/* Change color on hover */
+  .nav a {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
   .nav a:hover {
-    background-color: #ddd;
+    text-decoration: underline;
+    transition-duration: 1s;
+  }
+
+  .about {
+    grid-area: about;
+    display: grid;
+    grid-template-areas:
+    "about_heading"
+    "left-side right-side"
+    align-items: center;
+    justify-content: center;
+    height: 1vh;
+    width: auto;
+    background-color: white;
+    margin: 105px 40px 105px 40px;
+    padding: 200px 100px 250px 100px;
+    border-width: 20px;
+    border-radius: 25px;
+  }
+  .heading {
+    grid-area: about_heading;
+    text-align: center;
+    margin-top: -170px;
+    font-size: 45px;
+  }
+
+  .left {
+    grid-area: left-side;
+    margin-top: 0px;
+    margin-right: 200px;
+    margin-top: 50px;
+    margin-left: -100px
+  }
+
+  .right {
+    grid-area: right-side;
+    font-size: 24px;
+    margin-left: 250px;
+    margin-top: -60px;
+  }
+
+  #projects {
+    scroll-margin-top: 100px;
+  }
+
+  .proj {
+    grid-area: projects;
+    display: grid;
+    grid-template-areas:
+    "proj_heading"
+    "project_1 project_2 project_3"
+    height: 1vh;
+    width: auto;
+    background-color: white;
+    margin: 10px 40px 30px 40px;
+    padding: 100px 100px 150px 100px;
+    border-width: 20px;
+    border-radius: 25px;
+  }
+
+  .proj_head {
+    grid-area: heading;
+    margin-top: -90px;
+    font-size: 45px;
+  }
+  .project_tile {
+    grid-area: project_1;
+    text-align: center;
+    margin-bottom: -100px;
+    margin-left: -400px
+  }
+  .proj_1_pic {
+    width: 200px;
+    height:200px;
+    grid-area: proj_1;
+    transition: all .5s ease-in-out;
+  }
+  .proj_1_pic:hover {
+    transform: scale(1.1);
+    transition-duration: 1s;
+  }
+  #contacts {
+    scroll-margin-top: 100px;
+  }
+  .cont{
+    grid-area: contact;
+    display: grid;
+    grid-template-areas:
+    "cont_heading cont_heading cont_heading"
+    "message message message"
+    "git_info email_info link_info"
+    height: 50px;
+    width: auto;
+    background-color: white;
+    margin: 80px 40px 100px 40px;
+    padding: 350px 100px 50px 100px;
+    border-width: 20px;
+    border-radius: 25px;
+  }
+
+  .cont_head {
+    grid-area: cont_heading;
+    margin-top: -330px;
+    font-size: 45px;
+    text-align: center;
+  }
+  .platform {
+    grid-area: message;
+    margin-top: -250px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .git {
+    grid-area: git_info;
+    margin-top: -150px;
+    margin-left: -500px;
+    font-size: 35px;
+    text-align: center;
     color: black;
   }
+  .git a {
+    text-decoration: none;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+  }
+  .git a:hover {
+    top: -10px;
+  }
+  .email {
+    grid-area: email_info;
+    margin-top: -150px;
+    margin-left: -80px;
+    text-align: center;
+    color: black;
+  }
+  .email a {
+    font-size: 35px;
+    text-decoration: none;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+    color: black;
+  }
+  .email a:hover {
+    top: -10px;
+  }
+  .linked_in {
+    grid-area: link_info;
+    margin-top: -150px;
+    margin-left: 350px;
+    font-size: 35px;
+    text-align: center;
+    color: black;
+  }
+  .linked_in a {
+    text-decoration: none;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+  }
+  .linked_in a:hover {
+    top: -10px;
+  }
+
+  .intro_pic {
+    width: 250px;
+    height: 250px;
+    margin-top: -200px;
+    border-radius: 60%;
+  }
+
+  .foot {
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 10px;
+  }
+  a:visited { text-decoration: none; color:black; }
+  a:hover { text-decoration: none; color:black; }
+  a:focus { text-decoration: none; color:black; }
+  a:hover, a:active { text-decoration: none; color:black }
+
 </style>
