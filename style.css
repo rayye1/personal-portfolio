@@ -56,7 +56,7 @@
     grid-area: about;
     display: grid;
     grid-template-areas:
-    "about_heading"
+    "about_heading about_heading"
     "left-side right-side"
     align-items: center;
     justify-content: center;
@@ -99,9 +99,10 @@
     display: grid;
     grid-template-areas:
     "proj_heading"
-    "project_1 project_2 project_3"
+    "project_1"
     height: 1vh;
     width: auto;
+    justify-content: center;
     background-color: white;
     margin: 10px 40px 30px 40px;
     padding: 100px 100px 150px 100px;
@@ -111,18 +112,20 @@
 
   .proj_head {
     grid-area: heading;
-    margin-top: -90px;
+    margin-top: -70px;
     font-size: 45px;
   }
   .project_tile {
     grid-area: project_1;
     text-align: center;
+    justify-content: center;
     margin-bottom: -100px;
-    margin-left: -400px
+    margin-left: -50px
   }
   .proj_1_pic {
     width: 200px;
     height:200px;
+    justify-content: center;
     grid-area: proj_1;
     transition: all .5s ease-in-out;
   }
@@ -141,6 +144,7 @@
     "message message message"
     "git_info email_info link_info"
     height: 50px;
+    justify-content: center;
     width: auto;
     background-color: white;
     margin: 80px 40px 100px 40px;
