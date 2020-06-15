@@ -12,6 +12,9 @@
       font-size: 60%;
     }
   }
+  a {
+    text-decoration: none;
+  }
 
   body {
     margin: 0;
@@ -102,6 +105,7 @@
     "project_1"
     height: 1vh;
     width: auto;
+    grid-template-rows: 10px;
     justify-content: center;
     background-color: white;
     margin: 10px 40px 30px 40px;
@@ -114,24 +118,32 @@
     grid-area: heading;
     margin-top: -70px;
     font-size: 45px;
+    text-align: center;
   }
   .project_tile {
     grid-area: project_1;
     text-align: center;
     justify-content: center;
     margin-bottom: -100px;
-    margin-left: -50px
+    display: flex;
   }
   .proj_1_pic {
     width: 200px;
     height:200px;
     justify-content: center;
     grid-area: proj_1;
-    transition: all .5s ease-in-out;
+    transition: all .2s ease-in-out;
+    margin-right: 20px;
   }
   .proj_1_pic:hover {
     transform: scale(1.1);
-    transition-duration: 1s;
+    transition-duration: .2s;
+  }
+  .caption {
+    font-size: 10px;
+    text-decoration: none;
+    color: black;
+    margin-right: 20px; 
   }
   #contacts {
     scroll-margin-top: 100px;
@@ -231,9 +243,22 @@
     margin-top: -30px;
     margin-bottom: 10px;
   }
-  a:visited { text-decoration: none; color:black; }
-  a:hover { text-decoration: none; color:black; }
-  a:focus { text-decoration: none; color:black; }
-  a:hover, a:active { text-decoration: none; color:black }
+  a:visited {
+    text-decoration: none;
+    color:black;
+  }
+  a:hover {
+    text-decoration: none;
+    color:black;
+  }
+  a:focus {
+    text-decoration: none;
+    color:black;
+  }
+  a:hover, a:active {
+    text-decoration: none;
+    color:black
+  }
+
 
 </style>
